@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "EMLMainViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    EMLMainViewController *mainViewController = [[EMLMainViewController alloc] init];
+    self.window.rootViewController = mainViewController;
+    
     return YES;
 }
 

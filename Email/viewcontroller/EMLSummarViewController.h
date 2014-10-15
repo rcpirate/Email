@@ -1,5 +1,5 @@
 //
-//  EMLMainViewController.h
+//  EMLSummarViewController.h
 //  Email
 //
 //  Created by dy on 14-10-15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EMLMainViewController : UIViewController
+@interface EMLSummarViewController : UINavigationController
 
 @end
