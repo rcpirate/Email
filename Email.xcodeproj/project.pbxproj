@@ -294,10 +294,10 @@
 		0024BB8E19EE763100BC4303 /* Email */ = {
 			isa = PBXGroup;
 			children = (
+				0024BCA819EEAEEE00BC4303 /* libeml */,
 				0024BB9319EE763100BC4303 /* AppDelegate.h */,
 				0024BB9419EE763100BC4303 /* AppDelegate.m */,
 				0024BC9A19EEA5DA00BC4303 /* viewcontroller */,
-				0024BCA719EEA89100BC4303 /* libeml */,
 				0024BBCA19EE9B2300BC4303 /* Resource */,
 				0024BB8F19EE763100BC4303 /* Supporting Files */,
 				0024BB9919EE763100BC4303 /* Main.storyboard */,
@@ -483,7 +483,7 @@
 			path = viewcontroller;
 			sourceTree = "<group>";
 		};
-		0024BCA719EEA89100BC4303 /* libeml */ = {
+		0024BCA819EEAEEE00BC4303 /* libeml */ = {
 			isa = PBXGroup;
 			children = (
 			);
