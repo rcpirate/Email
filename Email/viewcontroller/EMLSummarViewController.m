@@ -8,11 +8,18 @@
 
 #import "EMLSummarViewController.h"
 
-@interface EMLSummarViewController ()
+@interface EMLSummarViewController ()<UITableViewDataSource,
+                                    UITableViewDelegate>
+{
+    
+}
+
+@property (nonatomic)UITableView *tableView;
 
 @end
 
 @implementation EMLSummarViewController
+@synthesize tableView = _tableView;
 
 - (instancetype)init
 {
@@ -32,15 +39,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"收信" style:UIBarButtonItemStylePlain target:self action:@selector(receiveAction:)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    titleLabel.text = self.title;
-    titleLabel.font = [UIFont systemFontOfSize:24];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.center = self.navigationBar.center;
-    self.navigationBar.barTintColor = [UIColor orangeColor];
-    [self.navigationBar addSubview:titleLabel];
+    [self.view addSubview:self.tableView];
+
+}
+
+#pragma mark tableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identify = @"summarTableViewCell";
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
+    }
+    
+    return cell;
+}
+
+
+
+#pragma mark action响应
+- (void)receiveAction:(UIBarButtonItem *)sender
+{
+    Pop3Client *popClient = [[Pop3Client alloc] init];
+    [popClient request];
+}
+
+#pragma mark 属性
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        CGRect rect = self.view.bounds;
+        _tableView = [[UITableView alloc] initWithFrame:rect];
+        _tableView.backgroundColor = [UIColor grayColor];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+    }
+    return _tableView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,14 +92,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

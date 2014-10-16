@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EMLMineViewController : UINavigationController
+@interface EMLMineViewController : UIViewController
 
 @end

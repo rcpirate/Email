@@ -334,6 +334,7 @@
 		0024BCA019EEA61400BC4303 /* EMLMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMLMineViewController.m; sourceTree = "<group>"; };
 		0024BCA119EEA61400BC4303 /* EMLSummarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMLSummarViewController.h; sourceTree = "<group>"; };
 		0024BCA219EEA61400BC4303 /* EMLSummarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMLSummarViewController.m; sourceTree = "<group>"; };
+		9CEC99E219F0184C001FDE37 /* prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -484,6 +485,7 @@
 			children = (
 				0024BB9019EE763100BC4303 /* Info.plist */,
 				0024BB9119EE763100BC4303 /* main.m */,
+				9CEC99E219F0184C001FDE37 /* prefix.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1021,7 +1023,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = Email/prefix.h;
 				INFOPLIST_FILE = Email/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1031,7 +1036,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = Email/prefix.h;
 				INFOPLIST_FILE = Email/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

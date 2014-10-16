@@ -57,7 +57,10 @@
             else
             {
                 [self.readStream removeFromRunLoop:currentRunLoop forMode:NSDefaultRunLoopMode];
+                [self.readStream close];
+                
                 [self.outputStream removeFromRunLoop:currentRunLoop forMode:NSDefaultRunLoopMode];
+                [self.outputStream close];
             }
         }
         
@@ -72,7 +75,7 @@
 #pragma mark NSStreamDelegate
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
 {
-    
+
 }
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EMLSummarViewController : UINavigationController
+@interface EMLSummarViewController : UIViewController
 
 @end

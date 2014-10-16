@@ -25,11 +25,12 @@
         self.title = @"emailor";
         
         EMLSummarViewController *summarViewController = [[EMLSummarViewController alloc] init];
+        UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:summarViewController];
         
         EMLMineViewController *mineViewController = [[EMLMineViewController alloc] init];
+        UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:mineViewController];
         
-//        self.viewControllers = @[summarViewController,mineViewController];
-        [self setViewControllers:@[summarViewController,mineViewController] animated:NO];
+        [self setViewControllers:@[nav1,nav2] animated:NO];
 //        self.selectedIndex = 1;
     }
     return self;

@@ -30,15 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    titleLabel.text = self.title;
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont systemFontOfSize:24];
-    titleLabel.center = self.navigationBar.center;
-    self.navigationBar.barTintColor = [UIColor orangeColor];
-    [self.navigationBar addSubview:titleLabel];
-    
 }
 
 - (void)didReceiveMemoryWarning {
