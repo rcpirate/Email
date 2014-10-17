@@ -9,17 +9,21 @@
 #import "EMLSummarViewController.h"
 
 @interface EMLSummarViewController ()<UITableViewDataSource,
-                                    UITableViewDelegate>
+                                    UITableViewDelegate,
+                                    UIScrollViewDelegate>
 {
     
 }
 
 @property (nonatomic)UITableView *tableView;
 
+@property (nonatomic)UIView *refreshView;
+
 @end
 
 @implementation EMLSummarViewController
 @synthesize tableView = _tableView;
+@synthesize refreshView = _refreshView;
 
 - (instancetype)init
 {
@@ -44,6 +48,7 @@
 
     [self.view addSubview:self.tableView];
 
+    [self.tableView addSubview:self.refreshView];
 }
 
 #pragma mark tableViewDelegate
@@ -65,7 +70,11 @@
     return cell;
 }
 
-
+#pragma mark UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"%f,%f",scrollView.contentOffset.x,scrollView.contentOffset.y);
+}
 
 #pragma mark action响应
 - (void)receiveAction:(UIBarButtonItem *)sender
@@ -85,6 +94,15 @@
         _tableView.delegate = self;
     }
     return _tableView;
+}
+
+- (UIView *)refreshView
+{
+    if (!_refreshView) {
+        _refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, -44, 320, 44)];
+        _refreshView.backgroundColor = [UIColor orangeColor];
+    }
+    return _refreshView;
 }
 
 - (void)didReceiveMemoryWarning {
